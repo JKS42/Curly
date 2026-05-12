@@ -1,35 +1,35 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import {Tabs} from "expo-router";
+import {tabs} from "@/constants/data";
+import {View} from "react-native";
+import clsx from "clsx";
+import {Image} from "expo-image";
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+const TabLayout = () => {
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
+        const TabIcon = ({focused, icon}: TabIconProps) => {
+                return (
+                    <View className="tabs-icons">
+                            <View className={clsx('tabs-pill', focused && 'tabs-active')}>
+                                    <Image source={icon} className="tabs-glyph"></Image>
+                            </View>
 
-  return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
-  );
-}
+                    </View>
+                )
+        };
+   return (<Tabs screenOptions = {{headerShown:false}}>
+               {tabs.map((tab)=>(
+                       <Tabs.Screen key={tab.name}
+                                    name={tab.name}
+                                    options={{title: tab.title,
+                                            tabBarIcon:({focused}) =>(
+                                                <TabIcon focused = {focused} icon = {tab.icon}/>
+
+                                            )
+                                    }}/>
+                   )
+
+               )}
+       </Tabs>
+   )
+};
+export default TabLayout
