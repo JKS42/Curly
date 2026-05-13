@@ -1,51 +1,82 @@
-# Welcome to your Expo app 👋
+# Curly ➰
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Curly is a universal mobile application built with **Expo** and **React Native**, designed for subscription management. It features a modern tech stack including **NativeWind v5** for styling and **Expo Router** for file-based navigation.
 
-## Get started
+## 🚀 Tech Stack
 
-1. Install dependencies
+- **Framework:** [Expo](https://expo.dev/) (SDK 54)
+- **Library:** [React Native](https://reactnative.dev/) (0.81.5)
+- **Routing:** [Expo Router](https://docs.expo.dev/router/introduction/)
+- **Styling:** [NativeWind v5](https://www.nativewind.dev/) (Tailwind CSS for React Native)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **State/Animations:** React Native Reanimated
 
+## 📁 Project Structure
+
+```text
+Curly/
+├── app/                  # Expo Router directory (File-based routing)
+│   ├── (auth)/           # Authentication routes (Sign-in, Sign-up)
+│   ├── (tabs)/           # Main application tabs (Insights, Settings, Subscriptions)
+│   ├── subscriptions/    # Dynamic subscription routes
+│   ├── _layout.tsx       # Root layout
+│   └── onboarding.tsx    # Onboarding screen
+├── assets/               # Images, fonts, and static assets
+├── constants/            # Theme, data, and icon constants
+├── components/           # Reusable UI components (TODO: Add components here)
+├── global.css            # Global Tailwind CSS styles
+├── app.json              # Expo configuration
+├── package.json          # Dependencies and scripts
+└── tsconfig.json         # TypeScript configuration
+```
+
+## 📋 Requirements
+
+- [Node.js](https://nodejs.org/) (LTS)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [Expo Go](https://expo.dev/go) (for physical device testing) or an Emulator (Android Studio / Xcode)
+
+## 🛠️ Setup & Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd Curly
+   ```
+
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-2. Start the app
-
+3. **Start the development server:**
    ```bash
-   npx expo start
+   npm start
    ```
 
-In the output, you'll find options to open the app in a
+## 📜 Available Scripts
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- `npm start`: Starts the Expo development server.
+- `npm run android`: Opens the app in an Android emulator.
+- `npm run ios`: Opens the app in an iOS simulator.
+- `npm run web`: Opens the app in a web browser.
+- `npm run lint`: Runs ESLint to check for code quality.
+- `npm run reset-project`: Resets the project to a blank state (use with caution).
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🔐 Environment Variables
 
-## Get a fresh project
+Currently, no environment variables are explicitly defined in the project root.
+- TODO: Add any API keys or configuration variables here as they are implemented.
 
-When you're ready, run:
+## 🧪 Testing
 
-```bash
-npm run reset-project
-```
+Testing infrastructure is not yet fully implemented.
+- TODO: Setup Jest and React Testing Library for unit and component tests.
+- Run linting with:
+  ```bash
+  npm run lint
+  ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 📄 License
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-# Curly
+- TODO: Specify the license (e.g., MIT, Apache 2.0).
